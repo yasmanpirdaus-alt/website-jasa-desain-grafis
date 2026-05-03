@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - PortoModern</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+       <div class="logo">
+    <img src="logo.1.png" alt="Logo">
+    HypeVisual Co.
+</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-section">
+        <div class="content">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                Mari Berkolaborasi
+            </h2>
+            <p style="text-align: center; color: white; font-size: 1.2rem; margin-bottom: 4rem;">Punya project menarik? Ayo diskusikan!</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto;">
+                <!-- Contact Info -->
+                <div>
+                    <h3 style="color: white; font-size: 1.5rem; margin-bottom: 2rem;">Hubungi Saya</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-envelope" style="font-size: 1.5rem; color: #667eea; width: 40px;"></i>
+                            <span style="color: white;">hello@portomodern.com</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-phone" style="font-size: 1.5rem; color: #667eea; width: 40px;"></i>
+                            <span style="color: white;">+62 812 3456 7890</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #667eea; width: 40px;"></i>
+                            <span style="color: white;">Mataram , Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <input type="text" placeholder="Nama Lengkap" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Subjek" required>
+                    <textarea rows="5" placeholder="Pesan Anda..." required></textarea>
+                    <button type="submit">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah terkirim. Saya akan balas dalam 24 jam.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+/* ===== IMPORT FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1), transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120,219,255,0.1), transparent 50%);
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(31,38,135,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== HERO ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.9));
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.3;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4facfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { filter: hue-rotate(0); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    padding: 0.9rem 2.2rem;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* ===== SECTION ===== */
+.content,
+.portfolio-section,
+.contact-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    padding-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* ===== GAMBAR ===== */
+.portfolio-img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    object-position: center;
+    background: white;
+}
+
+/* ===== TEXT CARD ===== */
+.card h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card p {
+    padding: 0 15px 15px;
+    text-align: center;
+    color: #666;
+}
+
+/* ===== FORM ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* ===== STATS ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.15);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* ===== ANIMASI ===== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.6s; }
+.delay-2 { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== PORTFOLIO TEXT ===== */
+/* ===== PORTFOLIO TEXT ===== */
+.portfolio-section h2 {
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.portfolio-section p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+}
+
+/* ===== CARD ANIMATION ===== */
+/* ===== CARD ANIMATION (LEBIH LAMBAT & SMOOTH) ===== */
+.portfolio-section .card {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1.8s ease forwards;
+}
+
+/* delay lebih halus */
+.portfolio-section .card:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.portfolio-section .card:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.portfolio-section .card:nth-child(3) {
+    animation-delay: 0.9s;
+}
+.portfolio-section .card:nth-child(4) {
+    animation-delay: 1.2s;
+}
+
+/* animasi masuk */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== GLOW TEXT ===== */
+.glow-text {
+    animation: glow 2.5s infinite alternate;
+}
+
+/* ===== ANIMASI MASUK ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== GLOW EFFECT ===== */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(214, 12, 12, 0.9),
+                     0 0 30px rgba(102,126,234,0.7);
+    }
+}
